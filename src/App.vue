@@ -1,37 +1,32 @@
 <template>
   <div id="app">
-    <div class="spieler1"></div>
-    <div class= "spieler2"></div>
-    <div class="spieler1"></div>
-    <div class= "spieler2"></div>
-    <div class="spieler1"></div>
-    <div class= "spieler2"></div>
-    <div class="spieler1"></div>
-    <div class= "spieler2"></div>
-    <div class="spieler1"></div>
+    <h1> TicTacToe</h1>
+    <div id= "detail">
+      <h2>Turn </h2>
+    <grid></grid>
   </div>
+    </div>
+   
 </template>
 
 <script>
-import Brett from './components/Brett.vue'
+import grid from './components/grid.vue'
 
 export default {
-  name: 'app',
   components: {
-    Brett
+    grid
+  },
+  data() {
+    return {
+
+    }
+
   }
 }
 </script>
 
 <style>
 #app {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-columns: 200px;
-  margin: 0 auto;
-  height: 600px;
-  width: 600px;
-  background: forestgreen;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
