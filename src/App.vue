@@ -34,8 +34,10 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-.spieler1 {
-  background: red;
-  
+#detail {
+  height: 650px;
+  width: 600px;
+  background: orange;
+  margin: 0 auto;
 }
 </style>
