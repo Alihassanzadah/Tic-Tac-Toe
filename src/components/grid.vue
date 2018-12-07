@@ -15,23 +15,21 @@
 <script>
 export default {
   name: 'grid',
-  props: {
-  background1: String,
-  background2: String,
-  background3: String,
-  background4: String,
-  background5: String,
-  background6: String,
-  background7: String,
-  background8: String,
-  background9: String,
-},
   data() {
     return {
-        
-    }
+    background1: String,
+    background2: String,
+    background3: String,
+    background4: String,
+    background5: String,
+    background6: String,
+    background7: String,
+    background8: String,
+    background9: String,
+      }
   },
   methods: {
+  
   }
 
 }
