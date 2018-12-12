@@ -2,7 +2,7 @@
   <div id="app">
     <h1> TicTacToe</h1>
     <div id= "detail">
-      <h2>Turn </h2>
+      <h2>Turn {{spieler1 & 2}}</h2>
     <grid></grid>
   </div>
     </div>
@@ -18,7 +18,12 @@ export default {
   },
   data() {
     return {
-
+      spieler1: function(currentPlayer = 1) {
+        this.spieler1= 'spieler1'
+      },
+      spieler2: function(currentPlayer = 1){
+        this.spieler2= 'spieler2'
+      }
     }
 
   }

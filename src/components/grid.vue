@@ -1,14 +1,6 @@
 <template>
     <div id ="game" class= "grid">
-    <div v-on:click= "background1 = 'red'" v-bind:style="{ backgroundColor: background1 }" class="spieler1"></div>
-    <div v-on:click= "background2 = 'green'" v-bind:style="{ backgroundColor: background2 }" class="spieler2"></div>
-   <div v-on:click= "background3 = 'red'" v-bind:style="{ backgroundColor: background3 }" class="spieler1"></div>
-    <div v-on:click= "background4 = 'green'" v-bind:style="{ backgroundColor: background4 }" class="spieler2"></div>
-    <div v-on:click= "background5 = 'red'" v-bind:style="{ backgroundColor: background5 }" class="spieler1"></div>
-    <div v-on:click= "background6 = 'green'" v-bind:style="{ backgroundColor: background6 }" class="spieler2"></div>
-    <div v-on:click= "background7 = 'red'" v-bind:style="{ backgroundColor: background7 }" class="spieler1"></div>
-    <div v-on:click= "background8 = 'green'" v-bind:style="{ backgroundColor: background8 }" class="spieler2"></div>
-    <div v-on:click= "background9 = 'red'" v-bind:style="{ backgroundColor: background9 }" class="spieler1"></div>
+    <div v-for="(color, index) in backgroundColors" v-bind:key="index" v-on:click.once="playerClickt(index)" :class="['spieler1', 'spieler2', color]" ></div>  
   </div>
 </template>
 
@@ -17,19 +9,31 @@ export default {
   name: 'grid',
   data() {
     return {
-    background1: String,
-    background2: String,
-    background3: String,
-    background4: String,
-    background5: String,
-    background6: String,
-    background7: String,
-    background8: String,
-    background9: String,
-      }
+      backgroundColors: [
+        'transparent',
+        'transparent',
+        'transparent',
+        'transparent',
+        'transparent',
+        'transparent',
+        'transparent',
+        'transparent',
+        'transparent'
+      ],
+      currentPlayer: 1,
+    }
   },
   methods: {
-  
+    playerClickt(field){
+      
+      if(this.currentPlayer == 1){
+        Vue.set(this.backgroundColors, field, 'green')
+        this.currentPlayer = 2
+      }else{
+        Vue.set(this.backgroundColors, field, 'red')
+        this.currentPlayer = 1
+      }
+    }
   }
 
 }
@@ -57,5 +61,13 @@ export default {
 .spieler2 {
    border: 1px solid white;
 
+}
+
+.green{
+  background-color: green;
+}
+
+.red{
+  background-color: red;
 }
 </style>
