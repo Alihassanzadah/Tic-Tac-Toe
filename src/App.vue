@@ -2,8 +2,8 @@
   <div id="app">
     <h1> TicTacToe</h1>
     <div id= "detail">
-      <h2>Turn {{spieler1 & 2}}</h2>
-    <grid></grid>
+      <h2>Turn player {{spieler}} </h2>
+    <grid v-on:playerClickt ="updatedSpieler($event)"></grid>
   </div>
     </div>
    
@@ -18,19 +18,19 @@ export default {
   },
   data() {
     return {
-      spieler1: function(currentPlayer = 1) {
-        this.spieler1= 'spieler1'
-      },
-      spieler2: function(currentPlayer = 1){
-        this.spieler2= 'spieler2'
-      }
+      spieler: 'green'
     }
-
+  },
+  methods: {
+     updatedSpieler : function(updatedSpieler) {
+      this.spieler = updatedSpieler;
+    }
   }
+   
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

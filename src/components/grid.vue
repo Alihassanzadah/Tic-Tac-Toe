@@ -28,10 +28,14 @@ export default {
       
       if(this.currentPlayer == 1){
         Vue.set(this.backgroundColors, field, 'green')
-        this.currentPlayer = 2
+        this.currentPlayer = 2,
+        this.$emit('playerClickt','red')
       }else{
         Vue.set(this.backgroundColors, field, 'red')
         this.currentPlayer = 1
+        this.$emit('playerClickt', 'green')
+        
+        
       }
     }
   }
