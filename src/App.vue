@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      spieler: 'green'
+      spieler: ''
     }
   },
   methods: {
@@ -43,6 +43,11 @@ export default {
   height: 650px;
   width: 600px;
   background: orange;
+  margin: 0 auto;
+}
+h2 {
+  color: dimgray;
+  padding: 15px;
   margin: 0 auto;
 }
 </style>
